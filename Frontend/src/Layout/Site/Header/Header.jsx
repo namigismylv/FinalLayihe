@@ -26,7 +26,7 @@ const Header = () => {
             <Link to="">Newswire</Link>
           </li>
           <li>
-            <Link to="">
+            <Link to="" target="_blank">
               Store
               <img
                 src="https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/9db08c7809308ca2fa4614f3c2d45a91.svg"
