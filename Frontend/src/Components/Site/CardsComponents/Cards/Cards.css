@@ -17,56 +17,7 @@
     }
   }
 }
-.viewMore__button{
-  margin-top: 40px;
-  text-align: center;
-  a{
-    background: transparent;
-    border: none;
-    font-weight: 400;
-    line-height: unset;
-    outline: none;
-    padding: 0;
-    position: relative;
-    text-transform: none;
-    z-index: 1;
-    color: #e8e8e8;
-    font-size: 20px;
-    transition: all .2s ease;
-  }
-  a::before{
-    border-radius: .25rem;
-    bottom: -2px;
-    content: "";
-    display: block;
-    height: 4px ;
-    left: -.1rem ;
-    position: absolute;
-    transition: all .2s ease ;
-    width: calc(100% + .2rem) ;
-    z-index: -1 ;
-    background-color: #fcaf17;
-  }
-  a:hover{
-    color: #161616;
 
-  }
-  a:hover::before{
-    padding: 17px 10px ;
-    left: -.5rem ;
-    width: calc(100% + 1rem);
-  }
-  
-
-}
-/* .gameRow{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.gameCol{
-  padding: 0 ;
-} */
 
 /* Media area */
 @media only screen and (max-width: 1024px) {

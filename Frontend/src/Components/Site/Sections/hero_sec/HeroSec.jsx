@@ -1,0 +1,57 @@
+import React, { useState, useEffect } from "react";
+import "./HeroSec.css";
+import GTAVideoPhoto from "../../../../assets/img/GTA6_Video.png";
+
+const HeroSec = () => {
+    const [modal, setModal] = useState(false);
+
+    useEffect(() => {
+        if (modal) {
+            document.body.style.overflow = "hidden"; 
+        } else {
+            document.body.style.overflow = ""; 
+        }
+
+        return () => {
+            document.body.style.overflow = ""; 
+        };
+    }, [modal]);
+
+    function clickModal() {
+        setModal(!modal);
+    }
+
+    return (
+        <>
+            <section className="herosec">
+                <div className="custom-container heroSec__container">
+                    <div className="row heroSec__row">
+                        <div className="col-9 heroSec__col1">
+                            <img src={GTAVideoPhoto} alt="" />
+                        </div>
+                        <div className="col-3 heroSec__col2">
+                            <div className="heroSec__info">
+                                <div className="heroSec__title">
+                                    <p>Grand Theft Auto VI</p>
+                                    <h2>Trailer 1</h2>
+                                </div>
+                                <div className="heroSec__button">
+                                    <button onClick={clickModal}>Watch Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {modal ? (
+                <div className="modal" onClick={clickModal}>
+                    <div className="modal-content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VMUa7xBMaoY?si=U4KAANIye6AI6evT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            ) : null}
+        </>
+    );
+};
+
+export default HeroSec;

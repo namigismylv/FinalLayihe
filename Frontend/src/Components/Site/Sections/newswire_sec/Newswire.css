@@ -1,0 +1,58 @@
+.newswire {
+  padding-top: 80px;
+  .newswire__container {
+    width: 90%;
+    margin: 0 auto;
+    .newswire__title {
+      margin-bottom: 2rem;
+      a {
+        line-height: 1.3;
+        font-size: 30px;
+        font-weight: bolder;
+        color: #ffffff;
+      }
+    }
+    .newswire__viewMore__button {
+      margin-top: 40px;
+    }
+    .newswireCol{
+      margin-bottom: 24px;
+    }
+    .card {
+      background: #000000;
+      border-radius: 8px;
+      border: 1px solid #282828;
+      transition: transform 0.2s ease;
+      overflow: hidden;
+      height: 100%;
+      
+      h5 {
+        color: white;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .newswire__title {
+    a {
+      font-size: 27px !important;
+    }
+  } 
+}
+@media only screen and (max-width: 786px) {
+  .newswire__title {
+    a {
+      font-size: 24px !important ;
+    }
+  } 
+}
+
+@media only screen and (max-width: 576px) {
+  .newswire__container{
+    width: 85% !important;
+  }
+
+  }
