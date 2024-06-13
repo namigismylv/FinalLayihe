@@ -46,7 +46,7 @@ const HeroSec = () => {
             {modal ? (
                 <div className="modal" onClick={clickModal}>
                     <div className="modal-content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VMUa7xBMaoY?si=U4KAANIye6AI6evT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe  src="https://www.youtube.com/embed/QdBZY2fkU-0?si=YTdNMpmO8W1sZETi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
                     </div>
                 </div>
             ) : null}
