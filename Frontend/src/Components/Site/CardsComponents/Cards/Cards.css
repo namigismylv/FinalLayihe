@@ -1,5 +1,4 @@
 .featuredG__container {
-  width: 90%;
   margin: 0 auto;
   .featured__games__title{
     margin-bottom: 2rem;
@@ -16,6 +15,10 @@
       display: none;
     }
   }
+}
+.featuredGames__btn{
+  border: none ;
+  background: none;
 }
 
 
@@ -73,14 +76,8 @@
 }
 @media only screen and (max-width: 768px) {
   .featured_games{
-    padding-top: 128px !important;
+    padding-top: 80px !important;
     padding-bottom: 45px !important;
   }
 }
 
-  @media only screen and (max-width: 576px) {
-    .featuredG__container{
-      width: 85%;
-    }
-  
-    }

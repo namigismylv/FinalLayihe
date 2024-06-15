@@ -6,8 +6,11 @@ import { useState } from 'react'
 
 function App() {
   const routes = createBrowserRouter(ROUTES)
-  
-  const contextData={}
+  const [modal, setModal] = useState(false);
+  function clickModal() {
+    setModal(!modal);
+} 
+  const contextData={modal,setModal,clickModal}
   return (
     <>
     <MainContext.Provider value={contextData}>

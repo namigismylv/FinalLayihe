@@ -1,6 +1,7 @@
-import { Children } from "react";
 import SiteRoot from "../Pages/Site/SiteRoot";
 import Home from "../Pages/Site/Home/Home";
+import Newswire from "../Pages/Site/Newswire/Newswire";
+import Shop from "../Pages/Site/Shop/Shop";
 
 const ROUTES = [
   {
@@ -10,6 +11,14 @@ const ROUTES = [
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: "newswire",
+        element: <Newswire />,
+      },
+      {
+        path: "shop",
+        element: <Shop/>,
       }
     ]
   },

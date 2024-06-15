@@ -40,6 +40,7 @@ header {
     }
   }
   .header__middle {
+    margin-left: 50px;
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -134,6 +135,8 @@ header {
     width: 30px;
     position: relative;
   }
+  
+  
 }
 
 /* .rockstarGames__home--logo::before{
@@ -201,6 +204,9 @@ header {
         }
         .rockstar__games--search{
             display: none;
+        }
+        .rockstar__games--basket{
+          display: none ;
         }
 
     }

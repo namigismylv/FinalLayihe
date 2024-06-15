@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./HeroSec.css";
 import GTAVideoPhoto from "../../../../assets/img/GTA6_Video.png";
+import MainContext from "../../../../Context/Context";
 
 const HeroSec = () => {
-    const [modal, setModal] = useState(false);
-
+    const {modal,clickModal}=useContext(MainContext)
     useEffect(() => {
         if (modal) {
             document.body.style.overflow = "hidden"; 
@@ -17,9 +17,6 @@ const HeroSec = () => {
         };
     }, [modal]);
 
-    function clickModal() {
-        setModal(!modal);
-    }
 
     return (
         <>
@@ -46,7 +43,7 @@ const HeroSec = () => {
             {modal ? (
                 <div className="modal" onClick={clickModal}>
                     <div className="modal-content">
-                    <iframe  src="https://www.youtube.com/embed/QdBZY2fkU-0?si=YTdNMpmO8W1sZETi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
+                    <iframe  src="https://www.youtube.com/embed/QdBZY2fkU-0?si=hnK-4W6KwyTP274f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="true"></iframe>
                     </div>
                 </div>
             ) : null}

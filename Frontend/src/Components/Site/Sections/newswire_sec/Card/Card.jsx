@@ -15,64 +15,7 @@ const Card = () => {
         </div>
       </div>
     </div>
-    <div className="col-md-6 col-sm-12 col-lg-4 newswireCol">
-    <div class="card" style={{width:"100%"}}>
-      <img src={GtaPlus} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">GTA Online</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.asjbkajfsbdkasfbkjkckansskackjascnkncjas
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="col-md-6 col-sm-12 col-lg-4 newswireCol">
-      <div class="card" style={{width:"100%"}}>
-        <img src={GtaPlus} class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">GTA Online</h5>
-          <p class="card-text">
-            Some quick example text to build on 
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="col-md-6 col-sm-12 col-lg-4 newswireCol">
-    <div class="card" style={{width:"100%"}}>
-      <img src={GtaPlus} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">GTA Online</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.asjbkajfsbdkasfbkjkahsbcaksbvsdabkbhhadskvbsakvjdshvkb
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="col-md-6 col-sm-12 col-lg-4 newswireCol">
-    <div class="card" style={{width:"100%"}}>
-      <img src={GtaPlus} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">GTA Online</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.asjbkajfsbdkasfbkjkahsbcaksbvsdabkbhhadskvbsakvjdshvkb
-        </p>
-      </div>
-    </div>
-  </div>
-  <div className="col-md-6 col-sm-12 col-lg-4 newswireCol">
-    <div class="card" style={{width:"100%"}}>
-      <img src={GtaPlus} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">GTA Online</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-        </p>
-      </div>
-    </div>
-  </div>  
+      
     </>
   );
 };
