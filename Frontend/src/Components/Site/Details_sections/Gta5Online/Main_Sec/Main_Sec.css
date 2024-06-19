@@ -1,0 +1,10 @@
+.main__section{
+        .main__section__img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 60%;
+            }
+        }
+}

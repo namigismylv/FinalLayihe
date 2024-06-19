@@ -1,0 +1,11 @@
+.additional__section{
+    .additional__section__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 80%;
+            border-radius: 15px;
+        }
+    }
+}

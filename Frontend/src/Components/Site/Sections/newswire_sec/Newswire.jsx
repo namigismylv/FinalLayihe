@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Newswire.css'
 import Cards from './Cards/Cards'
 import { Link } from 'react-router-dom'
+import MainContext from '../../../../Context/Context'
 const Newswire = () => {
+  const {news}=useContext(MainContext)
   return (
     <section className='newswire'>
         <div className='custom-container newswire__container'>
@@ -15,11 +17,13 @@ const Newswire = () => {
             </div>
         </div>
         </div>
-      <Cards/>
+        {
+          <Cards news={news.slice(1)}/>
+        }
         <div className="row">
           <div className="col-12">
             <div className="viewMore__button newswire__viewMore__button">
-            <Link to="">View More</Link>
+            <Link to="/newswire">View More</Link>
             </div>
           </div>
         </div>

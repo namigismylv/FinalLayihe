@@ -58,14 +58,9 @@ fieldset,
 form,
 label,
 legend,
-table,
 caption,
-tbody,
 tfoot,
 thead,
-tr,
-th,
-td,
 article,
 aside,
 canvas,
@@ -131,11 +126,13 @@ table {
 }
 body {
   font-family: "Helvetica Now Text";
-  
+  .newswire-body{
+    padding: 40px 30px;
+  }
   .newswireCol{
     margin-bottom: 24px;
     .card {
-        height: 100%;
+        height: 100% !important;
         background: #000000;
         border-radius: 8px;
         border: 1px solid #282828;
@@ -219,6 +216,28 @@ body {
     margin: 0 auto;
     border-radius: 8px;
   }
+  /* Detail area */
+  .generalRow{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 auto
+  }
+  /* Admin Area */
+  .general__admin{
+    width: calc(100% - 307.2px) ;
+    margin-left: auto ;
+    background-color: #e8e8e8;
+    tbody{
+      th{
+          vertical-align: middle;
+      }
+      td{
+          vertical-align: middle;
+      }
+  }
+
+  }
 }
 
 /* General Media */
@@ -232,6 +251,18 @@ body {
 }
 @media only screen and (max-width: 1024px) {
   body {
+    .newswire-body{
+      padding: 36px 27px;
+      p{
+        font-size: 22px !important;
+      };
+      h5{
+        font-size: 13px !important;
+      }
+      time{
+        font-size: 13px !important;
+      }
+    }
     .viewMore__button {
       button{
         font-size: 18px !important;
@@ -257,6 +288,24 @@ body {
     .modal-content iframe {
       width: 100%;
     }
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+  
+    .newswire-body{
+      padding: 32px 24px;
+      p{
+        font-size: 20px !important;
+      };
+      h5{
+        font-size: 12px !important;
+      }
+      time{
+        font-size: 12px !important;
+      }
+    }
+    
   }
 }
 @media only screen and (max-width: 576px) {
