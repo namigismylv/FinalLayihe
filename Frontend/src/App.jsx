@@ -36,10 +36,10 @@ function App() {
   }, []);
   const getDetailPath = (category, id) => {
     if(category === "Red Dead Online"){
-      return `/details/rdronline/${id}`
+      return `/newswire/details/rdronline/${id}`
     }
     else if(category=== "Gta Online"){
-      return `/details/gta5online/${id}`
+      return `/newswire/details/gta5online/${id}`
     }
      else{
       return "Error page"

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Main_Sec.css"
-import {Link} from "react-router-dom"
+import { Link } from 'react-router-dom'
 const Main_Sec = ({item}) => {
   return (
     <div className='main__section'>
@@ -12,23 +12,23 @@ const Main_Sec = ({item}) => {
           </div>
         </div>
         <div className="row generalRow">
-          <div className="col-6" >
+          <div className="col-7" >
             <div className="main__section__text" >
               <div className="main__section__text__about" >
-                <p>
+                <Link to="/newswire" className='main__section__about__description'>
                 Newswire
-                </p>
-                <p>
+                </Link>
+                <Link to={`/newswire/category/gta5online`} className='main__section__about__description'>
                 {item.category}
-                </p>
-                <p>
+                </Link>
+                <Link to="/newswire/events" className='main__section__about__description__events'>
                 Events
-                </p>
+                </Link>
               </div>
               <h1>{item.title}</h1>
               <h3>{item.detailsHeadDesc}</h3>
-              <time >{item.time}</time>
-              <p>{item.detailsMainDes}</p>
+              <p className='time'>{item.time}</p>
+              <p className='details__des'>{item.detailsMainDes}</p>
             </div>
           </div>
         </div>
@@ -40,3 +40,4 @@ const Main_Sec = ({item}) => {
 }
 
 export default Main_Sec
+

@@ -51,8 +51,6 @@ const AddNews = () => {
       >
         {({
           values,
-          errors,
-          touched,
           handleChange,
           setFieldValue,
           handleBlur,
@@ -94,12 +92,12 @@ const AddNews = () => {
               value={values.time}
             />
             <input
-              type="file"
+              type="text"
               name="detailsImg"
-              onChange={(event) => {
-                setFieldValue("detailsImg", event.currentTarget.files[0]);
-              }}
+              placeholder="details image"
+              onChange={handleChange}
               onBlur={handleBlur}
+              value={values.detailsImg}
             />
             <input
               type="text"
@@ -117,12 +115,12 @@ const AddNews = () => {
               value={values.detailsMainDes}
             />
             <input
-              type="file"
+              type="text"
               name="detailSecImg"
-              onChange={(event) => {
-                setFieldValue("detailSecImg", event.currentTarget.files[0]);
-              }}
+              onChange={handleChange}
               onBlur={handleBlur}
+              placeholder="details second image"
+              value={values.detailSecImg}
             />
             <input
               type="text"
@@ -140,12 +138,12 @@ const AddNews = () => {
               value={values.detailSecDes}
             />
             <input
-              type="file"
+              type="text"
               name="detailRdImg"
-              onChange={(event) => {
-                setFieldValue("detailRdImg", event.currentTarget.files[0]);
-              }}
+              placeholder="details third image"
+              onChange={handleChange}
               onBlur={handleBlur}
+              value={values.detailRdImg}
             />
             <input
               type="text"
