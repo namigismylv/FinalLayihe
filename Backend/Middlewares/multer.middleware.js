@@ -1,31 +1,18 @@
 const multer = require('multer');
-const path = require('path');
 
-// Storage konfiqurasiyası
+// Set up storage for uploaded files
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
+  destination: (req, file, cb) => {
     cb(null, 'uploads/');
   },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
   }
 });
 
-// Fayl filteri
-const fileFilter = (req, file, cb) => {
-  // Fayl tipinə görə filter
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
+// Create the multer instance
+const upload = multer({ storage: storage });
 
-const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5 // 5MB limit
-  },
-  fileFilter: fileFilter
-});
-module.exports= upload
+// Export the upload middleware
+module.exports = upload;
+

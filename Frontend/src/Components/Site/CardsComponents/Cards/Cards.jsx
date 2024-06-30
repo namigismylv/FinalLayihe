@@ -28,13 +28,7 @@ const Cards = () => {
       <div className="row gameRow">
         <Card />
       </div>
-      <div className="row">
-        <div className="col-12">
-          <div className="viewMore__button">
-            <Link to="">View More</Link>
-          </div>
-        </div>
-      </div>
+      
     </div>
     {modal ? (
                 <div className="modal" onClick={clickModal}>

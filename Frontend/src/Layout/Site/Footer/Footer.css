@@ -23,44 +23,7 @@ footer {
         }
       }
     }
-    .footer__top__right {
-      button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border: none;
-        color: inherit;
-        cursor: pointer;
-        outline: none;
-        padding: 10px;
-        color: #e8e8e8;
-        span {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 15px;
-          font-size: 15px;
-        }
-        .globalLanguage {
-          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 fill=%27none%27%3E%3Cpath stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10ZM2 12h20%27/%3E%3Cpath stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10v0Z%27/%3E%3C/svg%3E");
-          width: calc(12px * 1.75);
-          background-repeat: no-repeat;
-          background-size: contain;
-          margin-right: 0.5rem;
-        }
-        .globalLanguage::after {
-          content: "";
-          display: block;
-          padding-top: 100%;
-        }
-        .chevronDown {
-          font-size: 15px;
-          transition: transform 0.3s;
-          margin-right: 3px;
-        }
-      }
-    }
+    
   }
 }
 .footer__top__right {
@@ -158,7 +121,7 @@ footer {
 @media only screen and (max-width: 920px) {
   .footer__top {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start !important;
     .footer__top__left{
         a{
@@ -166,7 +129,7 @@ footer {
         }
     }
     .footer__top__right {
-      margin-top: 50px;
+    margin-bottom: 70px;
       
     }
   }
@@ -234,10 +197,10 @@ footer {
 }
 @media only screen and (max-width: 450px) {
     .footer__top{
-        flex-direction: column;
+        flex-direction: column-reverse;
         .footer__top__right{
             margin-top: 65px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
     }
     .footer__middle__left{

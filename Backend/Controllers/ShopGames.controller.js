@@ -31,7 +31,7 @@ const GamesController = {
     delete:async(req,res)=>{
         try{
             const {id}=req.params
-            await findByIdAndDelete(id)
+            await  Games.findByIdAndDelete(id)
             const target = await Games.find()
             res.send(target)
 

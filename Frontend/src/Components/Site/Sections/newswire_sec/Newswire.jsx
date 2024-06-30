@@ -2,9 +2,7 @@ import React, { useContext } from 'react'
 import './Newswire.css'
 import Cards from './Cards/Cards'
 import { Link } from 'react-router-dom'
-import MainContext from '../../../../Context/Context'
-const Newswire = () => {
-  const {news}=useContext(MainContext)
+const Newswire = ({news}) => {
   return (
     <section className='newswire'>
         <div className='custom-container newswire__container'>
@@ -12,7 +10,7 @@ const Newswire = () => {
         <div className="col-12">
             <div className="newswire__title">
                 <h3>
-                    <Link to=''>Newswire</Link>
+                    <Link to='/newswire'>Newswire</Link>
                 </h3>
             </div>
         </div>

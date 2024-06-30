@@ -20,7 +20,7 @@ const ProductsController = {
     },
     add: async (req, res) => {
         try {
-            const newProducts = new products({ ...req.body })
+            const newProducts = new products({ ...req.body,image: "http://localhost:3000/uploads/" + req.file.filename})
             await newProducts.save()
             const target = await products.find()
             res.send(target)
@@ -31,7 +31,7 @@ const ProductsController = {
     delete:async(req,res)=>{
         try{
             const {id}=req.params
-            await findByIdAndDelete(id)
+            await products.findByIdAndDelete(id)
             const target = await products.find()
             res.send(target)
 

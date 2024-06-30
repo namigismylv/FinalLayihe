@@ -1,10 +1,17 @@
 import React from 'react'
 import Card from '../Card/Card'
 
-const Cards = () => {
+const Cards = ({products}) => {
   return (
     <div className='row' style={{margin:"0 auto"}}>
-        <Card/>
+      {
+        products.map((product,index)=>{
+          return(
+
+            <Card product={product} key={index}/>
+          )
+        })
+      }
     </div>
   )
 }

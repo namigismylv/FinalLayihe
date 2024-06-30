@@ -8,14 +8,23 @@ const products = mongoose.model("products", new mongoose.Schema({
         type:String,
         require:true
     },
+    price:{
+        type:Number,
+        require:true
+    },
+    category:{
+        type:String,
+        require:true,
+    },
     description:{
         type:String,
         require:false
     },
-    category:{
+    detImg:{
         type:String,
-        require:false,
+        require:false
     }
+
 
 }))
 module.exports = { products }

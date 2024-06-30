@@ -1,7 +1,7 @@
+
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
-
 const NewswireRouter = require("./Routes/Newswire.routes")
 const ShopGamesRouter = require("./Routes/ShopGames.routes")
 const ShopProductsRouter = require("./Routes/ShopProducts.routes")
@@ -15,9 +15,7 @@ app.use("/newswire", NewswireRouter)
 app.use("/games", ShopGamesRouter)
 app.use("/products", ShopProductsRouter),
 // Login Register
-app.use("/register",userRouter)
-app.use("/login",userRouter)
-
+app.use(userRouter)
 app.use("/uploads",express.static('./uploads'))
 mongoose.connect(process.env.CS).then((res) => {
     console.log("db connected");
@@ -26,5 +24,6 @@ mongoose.connect(process.env.CS).then((res) => {
 app.listen(process.env.PORT, () => {
     console.log("server is working");
 })
+
 
 

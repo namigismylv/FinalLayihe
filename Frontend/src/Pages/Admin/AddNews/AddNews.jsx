@@ -4,7 +4,7 @@ import MainContext from "../../../Context/Context";
 import axios from "axios";
 
 const AddNews = () => {
-  const { news, setNews } = useContext(MainContext);
+  const { setNews } = useContext(MainContext);
 
   return (
     <div className="general__admin">
@@ -27,15 +27,15 @@ const AddNews = () => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           const formData = new FormData();
-          Object.keys(values).forEach(key => {
+          Object.keys(values).forEach((key) => {
             formData.append(key, values[key]);
           });
 
           axios
             .post("http://localhost:3000/newswire", formData, {
               headers: {
-                'Content-Type': 'multipart/form-data'
-              }
+                "Content-Type": "multipart/form-data",
+              },
             })
             .then((res) => {
               setNews(res.data);

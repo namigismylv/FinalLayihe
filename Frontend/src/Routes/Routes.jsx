@@ -1,4 +1,3 @@
-
 import SiteRoot from "../Pages/Site/SiteRoot";
 import Home from "../Pages/Site/Home/Home";
 import Newswire from "../Pages/Site/Newswire/Newswire";
@@ -16,10 +15,14 @@ import Signup from "../Pages/Site/SignUp/Signup";
 import Gta5Online__category from "../Pages/Site/NewsCategory/Gta5Online__category";
 import RDROnline__category from "../Pages/Site/NewsCategory/RDROnline__category";
 import NewsEvents from "../Pages/Site/NewsEvents/NewsEvents";
+import User from "../Pages/Site/User/User";
+import Shop__det from "../Pages/Site/Details/Shop__det/Shop__det";
+import GameShop__det from "../Pages/Site/Details/GameShop__det/GameShop__det";
+import Basket from "../Pages/Site/Basket/Basket";
+import RDR2 from "../Pages/Site/RDR2/RDR2";
 
 const ROUTES = [
   {
-
     path: "/",
     element: <SiteRoot />,
     children: [
@@ -33,66 +36,84 @@ const ROUTES = [
       },
       {
         path: "shop",
-        element: <Shop/>,
+        element: <Shop />,
       },
       {
-        path:"newswire/details/rdronline/:id",
-        element:<RdrOnline2_det/>
+        path: "newswire/details/rdronline/:id",
+        element: <RdrOnline2_det />,
       },
       {
-        path:"newswire/details/gta5online/:id",
-        element:<Gta5Online_det/>
+        path: "newswire/details/gta5online/:id",
+        element: <Gta5Online_det />,
       },
       {
-        path:"newswire/category/gta5online",
-        element:<Gta5Online__category/>
+        path: "newswire/category/gta5online",
+        element: <Gta5Online__category />,
       },
       {
-        path:"newswire/category/rdronline",
-        element:<RDROnline__category/>
+        path: "newswire/category/rdronline",
+        element: <RDROnline__category />,
       },
       {
-        path:"newswire/events",
-        element:<NewsEvents/>
-      },
-      
-      {
-        path:"login",
-        element:<Login/>
+        path: "newswire/events",
+        element: <NewsEvents />,
       },
       {
-        path:"register",
-        element:<Signup/>
+        path:"shop/products/details/:id",
+        element:<Shop__det/>
+      },
+      {
+        path:"shop/games/details/:id",
+        element:<GameShop__det/>
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Signup />,
+      },
+      {
+        path: "user",
+        element:<User/>
+       },
+       {
+         path:"basket",
+         element:<Basket/>
+
+       },
+       {
+        path:"reddeadredemption2",
+        element:<RDR2/>
       }
-    ]
+    ],
   },
   {
-    path:"/admin",
-    element:<AdminRoot/>,
-    children:[
+    path: "/admin",
+    element: <AdminRoot />,
+    children: [
       {
-        path:"magazine",
-        element:<Magazine/>
+        path: "magazine",
+        element: <Magazine />,
       },
       {
-        path:"newswire",
-        element:<News/>
+        path: "newswire",
+        element: <News />,
       },
       {
-        path:"addproducts",
-        element:<AddProducts/>
+        path: "addproducts",
+        element: <AddProducts />,
       },
       {
-        path:"addgames",
-        element:<AddGames/>
+        path: "addgames",
+        element: <AddGames />,
       },
       {
-        path:"addnews",
-        element:<AddNews/>
-      }
-      
-    ]
-  }
+        path: "addnews",
+        element: <AddNews />,
+      },
+    ],
+  },
 ];
-export default ROUTES
-
+export default ROUTES;

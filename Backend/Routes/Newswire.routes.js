@@ -1,3 +1,4 @@
+
 const express = require("express")
 const {NewswireController} =require("../Controllers/Newswire.controller")
 const router=express.Router()

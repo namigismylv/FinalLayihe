@@ -23,7 +23,7 @@ const Card = () => {
         </Link>
       </div>
       <div className="col-3 gameCol">
-        <Link>
+        <Link to={"/reddeadredemption2"}>
         <div className="featured__games__game rdr2">
         <img src={RDR2} class="card-img-top" alt="..." />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import "./BestSellers.css"
 import Cards from './Cards/Cards'
-const BestSellers = () => {
+const BestSellers = ({products}) => {
   return (
     <section className='sellers'>
       <div className="custom-container sellers-container" >
@@ -10,7 +10,7 @@ const BestSellers = () => {
               <h2>Best Sellers</h2>
             </div>
         </div>
-        <Cards/>
+        <Cards products={products}/>
         
       </div>
     </section>
