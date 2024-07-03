@@ -10,6 +10,7 @@ import "../../Shop/Shop.css"
 import { useParams } from "react-router";
 import axios from "axios"
 import MainContext from "../../../../Context/Context";
+import { Link } from "react-router-dom";
 const Shop__det = () => {
   const [item,setItem]=useState({})
   useEffect(() => {
@@ -23,6 +24,7 @@ const Shop__det = () => {
   }, []);
   const {id} = useParams()
   const {addToBasket}=useContext(MainContext)
+  const userLocal = JSON.parse(localStorage.getItem("user"));
   useEffect(()=>{
     axios.get(`http://localhost:3000/products/${id}`).then(res=>{
       setItem(res.data)
@@ -52,7 +54,15 @@ const Shop__det = () => {
                   {item.description}
                 </p>
                 <p className="rockstar__games__text__price">€{item.price}</p>
-                <button className="shop__basketBtn" onClick={()=>addToBasket(item)}>ADD TO CART</button>
+                {
+                  userLocal.id?(
+                    <button className="shop__basketBtn" onClick={()=>addToBasket(item)}>ADD TO CART</button>
+                  ):(
+                    <Link to="/register">
+                    <button className="shop__basketBtn">ADD TO CART</button>
+                    </Link>
+                  )
+                }
                 <div className="details__info">
                   <img src={track__svg} alt="Track SVG" />
                   <span>Get FREE shipping with orders over €69.99</span>

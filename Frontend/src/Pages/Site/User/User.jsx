@@ -27,7 +27,7 @@ const User = () => {
   <div style={{paddingTop:"80px"}}>
   <h1>{user.nickname}</h1>
   <h1>{user.email}</h1>
-  <img src={user.src} width="200px" style={{borderRadius:"50%"}}  alt="" />
+  <img src={user.src} width="70px" height="50px" style={{borderRadius:"50%"}}  alt="" />
     
   </div>
 

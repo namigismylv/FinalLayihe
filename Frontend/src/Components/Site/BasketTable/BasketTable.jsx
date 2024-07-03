@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import MainContext from "../../../Context/Context";
 const BasketTable = ({ basketItems }) => {
+  let sum = 0;
+  let count = 0;
+  const { increaseBasket, decreaseBasket, removeFromBasket } =
+    useContext(MainContext);
   return (
     <div className="custom-container">
       <div className="row">
@@ -8,46 +13,51 @@ const BasketTable = ({ basketItems }) => {
           <h3 className="basket__title">My Cart</h3>
         </div>
       </div>
+      {basketItems && basketItems.length > 0 ? (
+       <>
       <div className="row">
         <div className="col-12">
           <table class="table">
             <tbody>
               {basketItems.map((basketItem, index) => {
-                return(
+                sum += basketItem.totalPrice;
+                count += basketItem.count;
+                return (
                   <tr key={index}>
-                  <td style={{ width: "160px" }}>
-                    <div className="basket__img" style={{ width: "100%" }}>
-                      <Link>
-                        <img
-                          width="100%"
-                          src={basketItem.item.image}
-                          alt=""
-                        />
-                      </Link>
-                    </div>
-                  </td>
-                  <td>
-                    <div className="basket__info">
-                      <div className="basket__text">
-                        <div className="basket__text__heading">
-                          <Link>{basketItem.item.title}</Link>
-                          <p>€{basketItem.item.price}</p>
-                        </div>
-                        <div className="basket__text__body">
-                          <button>
-                            <i class="fa-solid fa-caret-left"></i>
-                          </button>
-                          <p>{basketItem.count}</p>
-                          <button>
-                            <i class="fa-solid fa-caret-right"></i>
-                          </button>
+                    <td style={{ width: "160px" }}>
+                      <div className="basket__img" style={{ width: "100%" }}>
+                          <img
+                            width="100%"
+                            src={basketItem.item.image}
+                            alt=""
+                          />
+                      </div>
+                    </td>
+                    <td>
+                      <div className="basket__info">
+                        <div className="basket__text">
+                          <div className="basket__text__heading">
+                            <Link>{basketItem.item.title}</Link>
+                            <p>Price: €{basketItem.item.price}</p>
+                          </div>
+                          <div className="basket__text__body">
+                          <div className="basket__text__body__increase">
+                            <button onClick={()=>decreaseBasket(basketItem.item)}>
+                              <i class="fa-solid fa-caret-left"></i>
+                            </button>
+                            <p>{basketItem.count}</p>
+                            <button onClick={()=>increaseBasket(basketItem.item)}>
+                              <i class="fa-solid fa-caret-right"></i>
+                            </button>
+                          </div>
+                        <button  onClick={()=>removeFromBasket(basketItem.item)} className="basket__removeBtn">Remove</button>
+
+                          </div>
                         </div>
                       </div>
-                      <button className="basket__removeBtn">Remove</button>
-                    </div>
-                  </td>
-                </tr>
-                )
+                    </td>
+                  </tr>
+                );
               })}
             </tbody>
           </table>
@@ -60,11 +70,16 @@ const BasketTable = ({ basketItems }) => {
         >
           <div className="subtotal__title">
             <span>Subtotal </span>
-            <span>(4 items):</span>
-            <span className=""> €111.96</span>
+            <span>({count} items):</span>
+            <span className=""> €{sum}</span>
           </div>
         </div>
       </div>
+       </> 
+      ):(
+        <h1 style={{fontSize:"20px",color:"#fff",fontWeight:"bolder",borderTop:"2px solid rgb(255 255 255 / 20%)",paddingTop:"20px",marginTop:"10px"}}>Your cart is empty...</h1>
+      )
+    }
     </div>
   );
 };

@@ -111,9 +111,9 @@ const Login = () => {
         {formik.touched.password && formik.errors.password && (
           <span style={{ color: "red" }}>{formik.errors.password}</span>
         )}
-        <Link to={"/register"}>Don't you have an account?</Link>
-        <Button type="submit" variant="contained" color="primary">
-          Sign Up
+        <Link to={"/register"} style={{color:"black"}}>Don't you have an account?</Link>
+        <Button type="submit" variant="contained" color="primary" style={{width:"40%",padding:"8px 20px",background:"#E19808",color:"black",fontWeight:"bolder"}}>
+          Sign In
         </Button>
       </form>
     </div>

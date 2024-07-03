@@ -39,12 +39,18 @@
                 line-height: 30px;
               }
             }
-            .basket__text__body {
+            .basket__text__body{
+              display: flex;
+              align-items: center;
+              justify-content: flex-end;
+              gap: 10px;
+              margin-top: 20px;
+            }
+            .basket__text__body__increase {
               display: flex;
               gap: 5px;
               align-items: center;
               justify-content: center;
-              margin-top: 10px;
               background: #ffab00;
               border-radius: 5px;
               width: 85.13px;
@@ -70,7 +76,6 @@
           border-radius: 4px;
           background-color: #dc3545;
           color: #ffffff;
-          margin-top: 48px;
         }
       }
 

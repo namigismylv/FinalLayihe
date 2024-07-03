@@ -90,3 +90,42 @@
     }
   }
 }
+@media only screen and (max-width: 992px) {
+  
+  .heroSec__col2 {
+    .heroSec__info{
+     
+        padding: 72px 36px !important;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  
+  .heroSec__col2 {
+    .heroSec__info{
+     
+        padding: 32px !important;
+    }
+  }
+}
+@media only screen and (max-width: 560px) {
+  
+  .heroSec__col2 {
+    .heroSec__info{
+      .heroSec__title{
+        p{
+          font-size: 12px !important;
+        }
+        h2{
+          font-size: 32px !important;
+        }
+      }
+      flex-direction: column;
+      button{
+        width: 100%;
+        font-size: 16px !important;
+        padding: 16px 48px !important;
+      }
+    }
+  }
+}

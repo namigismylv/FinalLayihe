@@ -12,6 +12,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useSelector } from "react-redux";
 import MainContext from "../../../Context/Context";
+import "./SignUp.css"
 
 const Signup = () => {
   const navigate = useNavigate("");
@@ -78,8 +79,8 @@ const Signup = () => {
 
 
   return (
-    <div style={{ width: "35%", margin: "50px auto", paddingTop: "100px" }}>
-      <form
+    <div style={{ width: "35%", margin: "50px auto", paddingTop: "100px" }} className="form__general">
+      <form className="signUp-form"
         onSubmit={formik.handleSubmit}
         style={{
           display: "flex",
@@ -183,22 +184,8 @@ const Signup = () => {
         {formik.touched.src && formik.errors.src && (
           <span style={{ color: "red" }}>{formik.errors.src}</span>
         )}
-        {/* <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Role</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            onBlur={formik.handleBlur}
-            value={formik.values.role}
-            onChange={formik.handleChange}
-            label="Role"
-            name="role"
-          >
-            <MenuItem value={"client"}>Client</MenuItem>
-          </Select>
-        </FormControl> */}
-        <Link to={"/login"}>Do you have an account?</Link>
-        <Button type="submit" variant="contained" color="primary">
+        <Link to={"/login"} style={{color:"black"}}>Do you have an account?</Link>
+        <Button style={{width:"40%",padding:"8px 20px",background:"#E19808",color:"black",fontWeight:"bolder"}} type="submit" variant="contained" color="primary">
           Sign Up
         </Button>
       </form>

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Formik } from "formik";
 import axios from "axios";
 import MainContext from "../../../Context/Context";
+import  "./AddGames.css"
 
 const AddGames = () => {
   const { setGames } = useContext(MainContext);
@@ -12,42 +13,50 @@ const AddGames = () => {
           image: "",
           title: "",
           price: "",
-          category: "",
           bigImg: "",
           nameImg: "",
           description: "",
-          keyFImg1: "",
-          keyFTit1: "",
-          keyFDes1: "",
-          keyFImg2: "",
-          keyFTit2: "",
-          keyFDes2: "",
         }}
         onSubmit={(values, { setSubmitting }) => {
+          const formData = new FormData();
+          Object.keys(values).forEach((key) => {
+            formData.append(key, values[key]);
+          });
           axios
-            .post("http://localhost:3000/games", { ...values })
+            .post("http://localhost:3000/games", formData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            })
             .then((res) => {
               setGames(res.data);
               console.log(res.data);
+            }).catch((error) => {
+              console.error("There was an error uploading the data!", error);
+            })
+            .finally(() => {
+              setSubmitting(false);
             });
         }}
       >
         {({
           values,
           handleChange,
+          setFieldValue,
           handleBlur,
           handleSubmit,
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} id="addgames__form">
             <input
-              type="text"
+              type="file"
               name="image"
               placeholder="Image"
-              onChange={handleChange}
+              onChange={(event) => {
+                setFieldValue("image", event.currentTarget.files[0]);
+              }}
               onBlur={handleBlur}
-              value={values.image}
             />
             <input
               type="text"
@@ -64,14 +73,6 @@ const AddGames = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.price}
-            />
-            <input
-              type="text"
-              name="category"
-              placeholder="Category"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.category}
             />
             <input
               type="text"
@@ -95,52 +96,7 @@ const AddGames = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.description}
-            />
-            <input
-              type="text"
-              name="keyFImg1"
-              placeholder="Story Image 1"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFImg1}
-            />
-            <input
-              type="text"
-              name="keyFTit1"
-              placeholder="story title 1"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFTit1}
-            />
-            <textarea
-              name="keyFDes1"
-              placeholder="story des 1"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFDes1}
-            />
-            <input
-              type="text"
-              name="keyFImg2"
-              placeholder="Story Image 2"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFImg2}
-            />
-            <input
-              type="text"
-              name="keyFTit2"
-              placeholder="story Title 2"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFTit2}
-            />
-            <textarea
-              name="keyFDes2"
-              placeholder="story des 2"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.keyFDes2}
+              rows={5}
             />
 
             <button type="submit" disabled={isSubmitting}>

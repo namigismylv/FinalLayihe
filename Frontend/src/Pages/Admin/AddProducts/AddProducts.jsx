@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Formik } from "formik";
 import axios from "axios";
 import MainContext from "../../../Context/Context";
+import "./AddProducts.css"
 const AddProducts = () => {
   const { setProducts } = useContext(MainContext);
   return (
@@ -44,7 +45,7 @@ const AddProducts = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form id="products__form" onSubmit={handleSubmit}>
             <input
               type="file"
               name="image"

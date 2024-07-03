@@ -5,7 +5,7 @@ const Cards = ({products}) => {
   return (
     <div className='row' style={{margin:"0 auto"}}>
       {
-        products.map((product,index)=>{
+        products.filter(item=>item.category === "Best Sellers").map((product,index)=>{
           return(
 
             <Card product={product} key={index}/>

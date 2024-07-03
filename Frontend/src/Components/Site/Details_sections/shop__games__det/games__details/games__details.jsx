@@ -10,7 +10,7 @@ import twitter from "../../../../../assets/img/twitter.svg";
 import instagram from "../../../../../assets/img/instagram.svg";
 import youtube from "../../../../../assets/img/youtube.svg";
 import twitch from "../../../../../assets/img/twitch.svg";
-const Games__details = () => {
+const Games__details = ({item}) => {
   return (
     <div className="games__details__sec">
       <div className="custom-container">
@@ -19,15 +19,7 @@ const Games__details = () => {
             <div className="games__details__sec__about">
               <h2>Game Details</h2>
               <strong>
-                An Epic Tale of honor and loyalty America, 1899. The end of the
-                Wild West era has begun. After a robbery goes badly wrong in the
-                western town of Blackwater, Arthur Morgan and the Van der Linde
-                gang are forced to flee. With federal agents and the best bounty
-                hunters in the nation massing on their heels, the gang must rob,
-                steal and fight their way across the rugged heartland of America
-                in order to survive. As deepening internal divisions threaten to
-                tear the gang apart, Arthur must make a choice between his own
-                ideals and loyalty to the gang who raised him.
+                {item.description}
               </strong>
             </div>
           </div>

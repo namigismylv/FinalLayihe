@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import { Formik } from "formik";
 import MainContext from "../../../Context/Context";
 import axios from "axios";
-
+import "./AddNews.css"
 const AddNews = () => {
   const { setNews } = useContext(MainContext);
 
   return (
     <div className="general__admin">
-      <h1>Add News</h1>
       <Formik
         initialValues={{
           image: null,
@@ -58,10 +57,11 @@ const AddNews = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
+          <form id="news__form" onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column",width:"50%",margin:"60px auto 0",gap:"15px"}}> 
             <input
               type="file"
               name="image"
+              placeholder="image"
               onChange={(event) => {
                 setFieldValue("image", event.currentTarget.files[0]);
               }}
@@ -112,6 +112,7 @@ const AddNews = () => {
               placeholder="Details text"
               onChange={handleChange}
               onBlur={handleBlur}
+              rows={5}
               value={values.detailsMainDes}
             />
             <input
@@ -136,6 +137,7 @@ const AddNews = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.detailSecDes}
+              rows={5}
             />
             <input
               type="text"
@@ -159,6 +161,8 @@ const AddNews = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.detailRdDes}
+              rows={5}
+
             />
             <button type="submit" disabled={isSubmitting}>
               Submit

@@ -20,7 +20,7 @@ const GamesController = {
     },
     add: async (req, res) => {
         try {
-            const newProducts = new Games({ ...req.body })
+            const newProducts = new Games({ ...req.body,image: "http://localhost:3000/uploads/" + req.file.filename})
             await newProducts.save()
             const target = await Games.find()
             res.send(target)

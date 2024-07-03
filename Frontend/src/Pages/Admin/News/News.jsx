@@ -6,6 +6,7 @@ const News = () => {
   const { news, setNews } = useContext(MainContext);
   return (
     <div className="general__admin">
+      <h2 style={{textAlign:"center",fontSize:"30px",marginTop:"40px",marginBottom:"40px"}}>Newswire</h2>
       <div
         className="news__admin"
         style={{
@@ -16,8 +17,8 @@ const News = () => {
         }}
       >
         <table
-          className="table  newsTable" 
-          style={{ margin: "auto", width: "90%"}}
+          className="table table-dark  newsTable" 
+          style={{ margin: "auto", width: "95%"}}
         >
           <thead>
             <tr>

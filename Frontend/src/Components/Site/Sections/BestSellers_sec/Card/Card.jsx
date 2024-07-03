@@ -11,7 +11,7 @@ const Card = ({product}) => {
             <h3 class="card-title">
               {product.title}
             </h3>
-            <p class="card-text">{product.price}</p>
+            <p class="card-text">€{product.price}</p>
           </div>
         </div>
       </Link>

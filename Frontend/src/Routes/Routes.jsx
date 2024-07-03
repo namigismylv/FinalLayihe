@@ -20,11 +20,14 @@ import Shop__det from "../Pages/Site/Details/Shop__det/Shop__det";
 import GameShop__det from "../Pages/Site/Details/GameShop__det/GameShop__det";
 import Basket from "../Pages/Site/Basket/Basket";
 import RDR2 from "../Pages/Site/RDR2/RDR2";
+import ScrollToTop from "../Components/Site/ScrollToTop/ScrollToTop";
+import NewArrivals from "../Pages/Site/ShopCategory/NewArrivals";
+import RDRE from "../Pages/Site/ShopCategory/RDRE";
 
 const ROUTES = [
   {
     path: "/",
-    element: <SiteRoot />,
+    element: <ScrollToTop><SiteRoot/></ScrollToTop>,
     children: [
       {
         path: "",
@@ -65,6 +68,14 @@ const ROUTES = [
       {
         path:"shop/games/details/:id",
         element:<GameShop__det/>
+      },
+      {
+        path:"shop/products/category/new-arrivals",
+        element:<NewArrivals/>
+      },
+      {
+        path:"shop/products/category/RDRE",
+        element:<RDRE/>
       },
       {
         path: "login",

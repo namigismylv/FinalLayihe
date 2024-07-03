@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../Card/Card";
+import MainContext from "../../../../../Context/Context";
 
-const Cards = ({ news }) => {
-  if (!Array.isArray(news)) {
+const Cards = () => {
+  const {filteredNews}=useContext(MainContext)
+  if (!Array.isArray(filteredNews)) {
     return (
       <div style={{ color: "#e8e8e8", fontSize: "30px" }}>
         No news available
@@ -12,7 +14,7 @@ const Cards = ({ news }) => {
 
   return (
     <div className="row">
-      {news.map((newsCard, index) => {
+      {filteredNews.map((newsCard, index) => {
         return <Card key={index} newsCard={newsCard} />;
       })}
     </div>

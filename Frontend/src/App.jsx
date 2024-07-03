@@ -21,6 +21,38 @@ function App() {
   );
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
+  const [sort, setSort] = useState(null);
+  const [isSearchDropdownVisible, setIsSearchDropdownVisible] = useState(false);
+  const searchButtonRef = useRef(null);
+  const searchDropdownRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [dropdownVisible,setIsDropdownVisible]=useState(false)
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    setIsDropdownVisible(e.target.value !== "")
+  };
+  const filteredNews = news.slice(1).filter(item =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase()) 
+  );
+  const toggleSearchDropdown = () => {
+    setIsSearchDropdownVisible(!isSearchDropdownVisible);
+  };
+
+
+  const handleSortChange = (event) => {
+    const value = event.target.value;
+    if (value === "low-to-high") {
+      setSort({ field: "price", asc: true });
+    } else if (value === "high-to-low") {
+      setSort({ field: "price", asc: false });
+    } else if (value === "a-z") {
+      setSort({ field: "title", asc: true });
+    } else if (value === "z-a") {
+      setSort({ field: "title", asc: false });
+    } else {
+      setSort(null);
+    }
+  };
   useEffect(() => {
     localStorage.setItem("basketItems", JSON.stringify(basketItems));
   }, [basketItems]);
@@ -42,6 +74,25 @@ function App() {
       setBasketItem([...basketItems, newBasketItem]);
     }
   }
+
+  const increaseBasket = (item) => {
+    const target = basketItems.find((x) => x.item._id === item._id);
+    target.count += 1;
+    target.totalPrice += item.price;
+    setBasketItem([...basketItems]);
+  };
+  const decreaseBasket = (item) => {
+    const target = basketItems.find((x) => x.item._id === item._id);
+    if (target.count > 1) {
+      target.count -= 1;
+      target.totalPrice -= item.price;
+      setBasketItem([...basketItems]);
+    }
+  };
+
+  const removeFromBasket = (item) => {
+    setBasketItem([...basketItems.filter((x) => x.item._id !== item._id)]);
+  };
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -125,7 +176,23 @@ function App() {
     handleClickShowPassword,
     handleClickShowConfirmPassword,
     basketItems,
-    addToBasket
+    addToBasket,
+    increaseBasket,
+    decreaseBasket,
+    removeFromBasket,
+    sort,
+    setSort,
+    handleSortChange,
+    isSearchDropdownVisible,
+    setIsSearchDropdownVisible,
+    searchButtonRef,
+    searchDropdownRef,
+    toggleSearchDropdown,
+    searchTerm, 
+    setSearchTerm,
+    handleSearchChange,
+    filteredNews,
+    dropdownVisible
   };
 
   return (

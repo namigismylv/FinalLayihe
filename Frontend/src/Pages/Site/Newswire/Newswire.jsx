@@ -20,13 +20,7 @@ const Newswire = () => {
       <section className="newswire__blog">
         <div className="custom-container">
           <Cards news={news.slice(1)} />
-          <div className="row">
-            <div className="col-12">
-              <div className="viewMore__button morestories__btn">
-                <button>More Stories</button>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
     </main>

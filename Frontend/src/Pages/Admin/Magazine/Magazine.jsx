@@ -5,9 +5,10 @@ const Magazine = () => {
   const {products,setProducts,games,setGames}=useContext(MainContext)
   return (
     <div className='general__admin'>
+      <h2 style={{textAlign:"center",marginBottom:"40px",marginTop:"40px",fontSize:"30px"}}>Games</h2>
       <table
-          className="table  gamesTable" 
-          style={{ margin: "auto", width: "90%"}}
+          className="table table-dark gamesTable" 
+          style={{ margin: "auto", width: "80%"}}
         >
           <thead>
             <tr>
@@ -15,7 +16,6 @@ const Magazine = () => {
               <th scope="col">Image</th>
               <th scope="col">Title</th>
               <th scope="col">Price</th>
-              <th scope="col">Category</th>
               <th scope="col">Delete</th>
             </tr>
           </thead>
@@ -34,7 +34,6 @@ const Magazine = () => {
                   </td>
                   <td>{gameItem.title}</td>
                   <td>€{gameItem.price}</td>
-                  <td>{gameItem.category}</td>
                   <td>
                     <button
                       className="btn btn-danger"
@@ -52,9 +51,10 @@ const Magazine = () => {
             }
           </tbody>
         </table>
+      <h2 style={{textAlign:"center",marginBottom:"40px",marginTop:"40px",fontSize:"30px"}}>Products</h2>
         <table
-          className="table  productsTable mt-5" 
-          style={{ margin: "auto", width: "90%"}}
+          className="table table-dark  productsTable mt-5" 
+          style={{ margin: "auto", width: "80%"}}
         >
           <thead>
             <tr>

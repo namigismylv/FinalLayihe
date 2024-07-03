@@ -5,7 +5,7 @@ import RGLogo from "../../../assets/img/RG__footer.png"
 const Footer = () => {
   return (
     <footer>
-      <div className="footer">
+      <div className="footer" style={{zIndex:"1000"}}>
         <div className="footer__top">
           <div className="footer__top__left">
             <ul>
